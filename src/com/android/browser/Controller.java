@@ -2290,6 +2290,13 @@ public class Controller
     }
 
     @Override
+    public Tab openHomePage() {
+        Tab home = mTabControl.getCurrentTab();
+        loadUrl(home, mSettings.getHomePage());
+        return home;
+    }
+
+    @Override
     public Tab openIncognitoTab() {
         return openTab(INCOGNITO_URI, true, true, false);
     }
